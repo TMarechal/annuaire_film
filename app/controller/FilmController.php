@@ -20,7 +20,23 @@ class FilmController extends Controller {
       $id_film = $this->route["params"]["id_film"];
       $film = Film::getFilmInfos($id_film);
 
+      $template = $this->twig->loadTemplate('/Description/Description.html.twig');
+      echo $template->render(array(
+         'film'  => $film
+      ));
+
       
    }
 
+   public function filmsByReal(){
+      $id_real = $this->route["params"]["id_realisateur"];
+      $films = Film::getFilmsByReal($id_real);
+      $reals = Film::getInfosReal($id_real);
+
+      $template = $this->twig->loadTemplate('/Realisateur/real.html.twig');
+      echo $template->render(array(
+         'films'  => $films,
+         'reals'  => $reals
+      ));
+   }
 }

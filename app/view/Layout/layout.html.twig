@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <base href="http://localhost/todolist/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+	<base href="http://localhost/todolist/">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<title>Ciné'Marcel</title>
 </head>
-<body>
-    {% block body %}{% endblock %}
+
+<body class="bgbody">
+		<header class="header">
+			<img class="height70 width70" src="./assets/medias/images/Ticket.png">
+				<a href="/todolist">
+					<h1 class="color3 textDeco paddingL25 paddingT15px cursor">
+						Ciné'Marcel
+					</h1>
+				</a>
+			</header>
+	{% block body %}{% endblock %}
+
+	{% block javascripts %}
+	<!-- jQuery/jQueryUI (hosted) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js"></script>
+	<!-- Markdown parser -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+	<!-- Prettyprint -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+	<!-- Plugin -->
+	<script src="./assets/js/jquery.coverflow.js"></script>
+	<!-- Optionals -->
+	<script src="./assets/js/jquery.interpolate.min.js"></script>
+	<script src="./assets/js/jquery.touchSwipe.min.js"></script>
+	<script src="./assets/js/reflection.js"></script>
+	{% endblock %}
 </body>
+
 </html>

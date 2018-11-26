@@ -18,12 +18,19 @@ class Router {
          if($parts[0] == "genre" && count($parts) == 2) {
             $result["controller"] = "Film";
             $result["action"] = "filmsByGenre";
-            $result["params"]["id_genre"] = $parts[1];            
+            $result["params"]["id_genre"] = $parts[1]; 
+                       
          } elseif ($parts[0] == "film" && count($parts) == 2){
             $result["controller"] = "Film";
             $result["action"] = "displayFilm";
             $result["params"]["id_film"] = $parts[1];
+
+         } elseif($parts[0] == "realisateur" && count($parts) == 2){
+            $result["controller"] = "Film";
+            $result["action"] = "filmsByReal";
+            $result["params"]["id_realisateur"] = $parts[1];
          }
+
       }
       
       return $result;

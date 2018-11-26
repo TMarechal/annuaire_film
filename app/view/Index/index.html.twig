@@ -1,34 +1,20 @@
 {% extends '/Layout/layout.html.twig' %}
 
 {% block body %}
-<section class="menu">
-    <div class="menudiv color3 ">
-        <h1 class="fontSize30px">Film du genre : {{ genre.genre }}</h1>
-        <ul class=" fontSize20px ">
-            {% for film in films %}
-            <li>
-                {{ film.titre }} - {{ film.annee }} - {{ film.realisateur }}
 
-            </li>
-            {% endfor %}
-        </ul>
-</section>
-</div>
-<section class="carousel">
+<section class="carousel paddingTop20">
     <div id="preview" class="padding50">
         <div id="preview-coverflow">
             {% for film in films %}
             <a href="film/{{ film.id }}"><img src="./assets/medias/images/{{ film.image }}" alt="{{ film.titre }}" /></a>
             {% endfor %}
         </div>
-
-
     </div>
 </section>
-
-{% endblock %}
 
 {% block javascripts %}
 {{ parent() }}
 <script src="./assets/js/scriptcoverflow.js"></script>
+{% endblock %}
+
 {% endblock %}

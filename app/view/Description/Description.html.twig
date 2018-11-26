@@ -1,0 +1,19 @@
+{% extends '/Layout/layout.html.twig' %}
+
+{% block body %}
+<section class="menu">
+
+    <div class="menudiv color3 ">
+        <ul class=" fontSize20px flexDirectionC justifyContentSA">
+            <h1 class="fontSize30px textAlignC marginTop20">{{ film.titre }}</h1>
+            <li>
+                Realisé par {{ film.realisateur }}
+            </li>
+            <li> Année : {{ film.annee }}</li>
+            <li> Genre : {{ genre.genre }}</li>
+            <li> {{ film.description }} </li>
+        </ul>
+</section>
+</div>
+
+{% endblock %}
