@@ -9,7 +9,7 @@ class Film extends Model {
       $sql = $db->prepare("SELECT * FROM films 
             INNER JOIN films_genre 
             WHERE films_genre.id_genre = :idgenre
-            AND films_genre.id_films = films.id");
+            AND films_genre.id_films = films.id_film");
       $sql->bindValue(':idgenre', $id_genre, PDO::PARAM_INT);
       $sql->execute();
 
@@ -22,7 +22,7 @@ class Film extends Model {
       $db = Database::getInstance();
 
       $sql = $db->prepare("SELECT * FROM genre 
-                     WHERE id = :id");
+                     WHERE id_genre = :id");
       $sql->bindValue(':id', $id_genre, PDO::PARAM_INT);
       $sql->execute();
 
@@ -34,14 +34,14 @@ class Film extends Model {
    public static function getFilmsByReal($id_realisateur){
       $db = Database::getInstance();
 
-      $sql =$db->prepare("SELECT * FROM realisateur
+      $sql =$db->prepare("SELECT * FROM films
             INNER JOIN films_real
-            WHERE films_genre.id_realisateur = :idreal
-            AND films_genre.id_films = films.id");
+            WHERE films_real.id_realisateur = :idreal
+            AND films_real.id_films = films.id_film");
       $sql->bindValue(':idreal', $id_realisateur, PDO::PARAM_INT);
       $sql->execute();
 
-      $films_real = $sql->fetch(PDO::FETCH_ASSOC);
+      $films_real = $sql->fetchAll(PDO::FETCH_ASSOC);
 
       return $films_real;
    }
@@ -50,7 +50,7 @@ class Film extends Model {
       $db = Database::getInstance();
 
       $sql = $db->prepare("SELECT * FROM realisateur 
-                     WHERE id = :id");
+                     WHERE id_realisateur = :id");
       $sql->bindValue(':id', $id_real, PDO::PARAM_INT);
       $sql->execute();
 
@@ -63,7 +63,7 @@ class Film extends Model {
       $db = Database::getInstance();
 
       $sql = $db->prepare("SELECT * FROM films 
-                     WHERE id = :id");
+                     WHERE id_film = :id");
       $sql->bindValue(':id', $id_film, PDO::PARAM_INT);
       $sql->execute();
 

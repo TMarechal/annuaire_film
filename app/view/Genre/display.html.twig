@@ -1,10 +1,10 @@
 {% extends '/Layout/layout.html.twig' %}
 
 {% block body %}
-<section class="menu">
-    <div class="menudiv color3 ">
-        <h1 class="fontSize30px">Film du genre : {{ genre.genre }}</h1>
-        <ul class=" fontSize20px ">
+<section class="height80vh dFlex justifyContentC alignItemsC">
+    <div class="height50p100 width80p100 bgColor border0 dFlex alignItemsC  color3 flexDirectionC">
+        <h1 class="fontSize30px marginTop75px">Film du genre : {{ genre.genre }}</h1>
+        <ul class=" fontSize20px marginTop75px ">
             {% for film in films %}
             <li>
                 {{ film.titre }} - {{ film.annee }} - {{ film.realisateur }}
@@ -12,20 +12,25 @@
             </li>
             {% endfor %}
         </ul>
+    </div>
 </section>
-</div>
-<section class="carousel">
-    <div id="preview" class="padding50">
+<section class="height40vh border0 bgColor ">
+    <div id="preview " class="marginTop50px">
         <div id="preview-coverflow">
             {% for film in films %}
-            <a href="film/{{ film.id }}"><img src="./assets/medias/images/{{ film.image }}" alt="{{ film.titre }}" /></a>
+            <a href="film/{{ film.id_film }}"><img class="" src="./assets/medias/images/{{ film.image }}" alt="{{ film.titre }}" /></a>
             {% endfor %}
         </div>
 
 
     </div>
 </section>
-
+<footer class="height10vh border0 bgColor marginTop75px dFlex justifyContentC alignItemsC">
+    
+		<p class=" fontSize20px color3 font2">Made by Armelle, Morgan, Léo, Thomas</p>
+		{# <a href="https://github.com/thomascodeur/annuaire_film" target="_blank" ><img class="width85 height85" src="./assets/medias/images/gitIcon.png"></a> #}
+		
+	</footer>
 {% endblock %}
 
 {% block javascripts %}

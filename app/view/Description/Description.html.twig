@@ -1,13 +1,13 @@
 {% extends '/Layout/layout.html.twig' %}
 
 {% block body %}
-<section class="menu">
+<section class="height80vh dFlex justifyContentC alignItemsC">
 
-    <div class="menudiv color3 ">
-        <ul class=" fontSize20px flexDirectionC justifyContentSA">
-            <h1 class="fontSize30px textAlignC marginTop20">{{ film.titre }}</h1>
-            <li>
-                Realisé par {{ film.realisateur }}
+    <div class="height50p100 width80p100 bgColor border0 dFlex alignItemsC color3 ">
+        <ul class=" fontSize20px dFlex flexDirectionC justifyContentSE textAlignC width100 font1">
+            <h1 class="fontSize30px dFlex flexDirectionC justifyContentSE textAlignC textAlignC marginTop20 font2">{{ film.titre }}</h1>
+            <li class="marginTop75px ">
+                Réalisé par {{ film.realisateur }}
             </li>
             <li> Année : {{ film.annee }}</li>
             <li> Genre : {{ genre.genre }}</li>
@@ -15,5 +15,10 @@
         </ul>
 </section>
 </div>
-
+<footer class="height10vh border0 bgColor marginTop75px dFlex justifyContentC alignItemsC">
+    
+		<p class=" fontSize20px color3 font2">Made by Armelle, Morgan, Léo, Thomas</p>
+		{# <a href="https://github.com/thomascodeur/annuaire_film" target="_blank" ><img class="width85 height85" src="./assets/medias/images/gitIcon.png"></a> #}
+		
+	</footer>
 {% endblock %}

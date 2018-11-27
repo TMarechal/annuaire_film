@@ -2,16 +2,31 @@
 
 {% block body %}
 
-<section class="carousel paddingTop20">
-    <div id="preview" class="padding50">
-        <div id="preview-coverflow">
+<section class=" height80vh dFlex justifyContentC alignItemsC">
+    <div class="height50p100 width80p100 bgColor border0 dFlex flexDirectionC justifyContentC alignItemsC color3 ">
+        <h1 class="fontSize40px font2">Bienvenue sur Ciné'Marcel</h1>
+        <p class="fontSize25px marginTop75px textAlignC font1"> Vous pouvez naviguez dans nos films en passant par le carousel ou en indiquant genre suivis de /1-16 
+            dans l'url pour faire une recherche par genre. <a class="textDecoN color5" href="http://localhost/todolist/genre/1">http://localhost/todolist/genre/1</a></p>
+            <p class="fontSize25px marginTop50px textAlignC font1"> Vous pouvez aussi faire une recherche par réalisateur en indiquant realisateur suivis de 1/-31 
+                pour effectuer une recherche selon le réalisateur. <a class="textDecoN color5" href="http://localhost/todolist/realisateur/1">http://localhost/todolist/realisateur/1</a></p>
+    </div>
+</section>
+
+<section class="height40vh border0 bgColor marginTop50px">
+    <div id="preview">
+        <div id="preview-coverflow" class="marginTop50px">
             {% for film in films %}
-            <a href="film/{{ film.id }}"><img src="./assets/medias/images/{{ film.image }}" alt="{{ film.titre }}" /></a>
+            <a href="film/{{ film.id_film }}"><img src="./assets/medias/images/{{ film.image }}" alt="{{ film.titre }}" /></a>
             {% endfor %}
         </div>
     </div>
 </section>
-
+<footer class="height10vh border0 bgColor marginTop75px dFlex justifyContentC alignItemsC">
+    
+		<p class=" fontSize20px color3 font2">Made by Armelle, Morgan, Léo, Thomas</p>
+		{# <a href="https://github.com/thomascodeur/annuaire_film" target="_blank" ><img class="width85 height85" src="./assets/medias/images/gitIcon.png"></a> #}
+		
+	</footer>
 {% block javascripts %}
 {{ parent() }}
 <script src="./assets/js/scriptcoverflow.js"></script>

@@ -11,16 +11,25 @@
 </head>
 
 <body class="bgbody">
-		<header class="header">
+		<div id="David" class="dNone positionAbso LTCalc">
+				<img src="./assets/medias/images/davidGood.gif">
+				<audio id="davidAudio"  class="dNone">
+					<source src="./assets/medias/audio/davidGood.mp3"/>
+				</audio>
+			</div>
+
+		<header class="dFlex height10vh justifyContentC alignItemsC border0 bgColor">
 			<img class="height70 width70" src="./assets/medias/images/Ticket.png">
 				<a href="/todolist">
-					<h1 class="color3 textDeco paddingL25 paddingT15px cursor">
+					<h1 class=" fontSize40px font2 color3 textDeco paddingL25  cursor">
 						Ciné'Marcel
 					</h1>
 				</a>
 			</header>
-	{% block body %}{% endblock %}
 
+	{% block body %}{% endblock %}
+			
+	
 	{% block javascripts %}
 	<!-- jQuery/jQueryUI (hosted) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
@@ -34,7 +43,7 @@
 	<!-- Optionals -->
 	<script src="./assets/js/jquery.interpolate.min.js"></script>
 	<script src="./assets/js/jquery.touchSwipe.min.js"></script>
-	<script src="./assets/js/reflection.js"></script>
+	<script src="./assets/js/script.js"></script>
 	{% endblock %}
 </body>
 

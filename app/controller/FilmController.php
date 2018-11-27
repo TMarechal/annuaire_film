@@ -31,12 +31,13 @@ class FilmController extends Controller {
    public function filmsByReal(){
       $id_real = $this->route["params"]["id_realisateur"];
       $films = Film::getFilmsByReal($id_real);
-      $reals = Film::getInfosReal($id_real);
+      $real = Film::getInfosReal($id_real);
 
       $template = $this->twig->loadTemplate('/Realisateur/real.html.twig');
       echo $template->render(array(
          'films'  => $films,
-         'reals'  => $reals
+         'real'  => $real
+   
       ));
    }
 }
