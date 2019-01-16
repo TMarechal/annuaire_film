@@ -14,8 +14,8 @@ class Database {
       // A faire : fichier de config
       $this->_db = new PDO(
          "mysql:host=localhost;dbname=bdd_films;charset=utf8",
-         "tmarechal",
-         "c28a64d484f088"
+         "root",
+         ""
       );
    }
 
